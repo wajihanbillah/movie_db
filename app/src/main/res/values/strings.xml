@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MovieDB</string>
+    <string name="title_empty">No Data</string>
+    <string name="message_empty">No Data to be shown</string>
+    <string name="label_error">Error</string>
+    <string name="error_message">Please check your internet connection, and try again.</string>
+    <string name="action_retry">Retry</string>
+</resources>
