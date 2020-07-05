@@ -1,8 +1,9 @@
 package com.wajihan.moviedb.data.movie.remote
 
 import com.wajihan.moviedb.data.movie.model.response.GenreItem
-import com.wajihan.moviedb.data.movie.model.response.MovieItem
 import com.wajihan.moviedb.data.movie.model.response.ReviewItem
+import com.wajihan.moviedb.data.movie.model.response.VideoItem
+import com.wajihan.moviedb.data.movie.model.response.movie.MovieItem
 import com.wajihan.moviedb.utils.base.data.ApiResponse
 import com.wajihan.moviedb.utils.base.data.WebApi
 import io.reactivex.Single
@@ -24,5 +25,9 @@ class MovieApi(private val apiClient: MovieApiClient) : WebApi, MovieApiClient {
 
     override fun getMovieReviews(movieId: Int, page: Int): Single<Response<ApiResponse<List<ReviewItem>>>> {
         return apiClient.getMovieReviews(movieId, page)
+    }
+
+    override fun getMovieVideos(movieId: Int): Single<Response<ApiResponse<List<VideoItem>>>> {
+        return apiClient.getMovieVideos(movieId)
     }
 }

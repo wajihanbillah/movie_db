@@ -2,8 +2,9 @@ package com.wajihan.moviedb.domain.movie
 
 import com.wajihan.moviedb.data.movie.MovieRepository
 import com.wajihan.moviedb.domain.movie.model.Genre
-import com.wajihan.moviedb.domain.movie.model.Movie
 import com.wajihan.moviedb.domain.movie.model.Review
+import com.wajihan.moviedb.domain.movie.model.Video
+import com.wajihan.moviedb.domain.movie.model.movie.Movie
 import io.reactivex.Single
 
 class MovieInteractor(private val repository: MovieRepository) : MovieUseCase {
@@ -34,6 +35,14 @@ class MovieInteractor(private val repository: MovieRepository) : MovieUseCase {
         return repository.getMovieReviews(movieId, page).map {
             it.map { item ->
                 item.toReview()
+            }
+        }
+    }
+
+    override fun getMovieVideos(movieId: Int): Single<List<Video>> {
+        return repository.getMovieVideos(movieId).map {
+            it.map { item ->
+                item.toVideo()
             }
         }
     }

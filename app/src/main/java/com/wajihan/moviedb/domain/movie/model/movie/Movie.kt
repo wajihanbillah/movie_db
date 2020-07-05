@@ -1,4 +1,6 @@
-package com.wajihan.moviedb.domain.movie.model
+package com.wajihan.moviedb.domain.movie.model.movie
+
+import com.wajihan.moviedb.domain.movie.model.Genre
 
 data class Movie(
     val popularity: Double,
@@ -12,7 +14,7 @@ data class Movie(
     val originalTitle: String,
     val genreIds: List<Int>,
     val title: String,
-    val voteAverage: Int,
+    val voteAverage: Double,
     val overview: String,
     val releaseDate: String,
 
@@ -21,11 +23,11 @@ data class Movie(
     val genres: List<Genre>,
     val homepage: String,
     val imdbId: String,
-    val productionCompanies: List<String>,
-    val productionCountries: List<String>,
+    val productionCompanies: List<ProductionCompany>,
+    val productionCountries: List<ProductionCountry>,
     val revenue: Int,
     val runtime: Int,
-    val spokenLanguages: List<String>,
+    val spokenLanguages: List<SpokenLanguage>,
     val status: String,
     val tagline: String
 )

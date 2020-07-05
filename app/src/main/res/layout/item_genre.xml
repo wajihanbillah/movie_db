@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardGenre"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_8dp"
+    app:cardBackgroundColor="@color/colorPaleAquaTwo"
+    app:cardCornerRadius="@dimen/dimen_12dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="@dimen/dimen_1dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/MovieDbTextView.Bold.Tael"
+        android:layout_gravity="center_horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:lines="2"
+        android:paddingStart="@dimen/dimen_12dp"
+        android:paddingTop="@dimen/dimen_8dp"
+        android:paddingEnd="@dimen/dimen_12dp"
+        android:paddingBottom="@dimen/dimen_8dp"
+        android:textSize="@dimen/text_size_16sp"
+        app:autoSizeMaxTextSize="@dimen/text_size_16sp"
+        app:autoSizeMinTextSize="@dimen/text_size_8sp"
+        app:autoSizeStepGranularity="@dimen/dimen_2dp"
+        app:autoSizeTextType="none"
+        tools:text="Semua" />
+</com.google.android.material.card.MaterialCardView>

@@ -50,7 +50,7 @@ fun Context.showWhiteAlertDialog(
     if (negativeButton != null) {
         val buttonNegative = dialog.getButton(DialogInterface.BUTTON_NEGATIVE)
         buttonNegative.setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent))
-        buttonNegative.setTextColor(ContextCompat.getColor(this, android.R.color.darker_gray))
+        buttonNegative.setTextColor(ContextCompat.getColor(this, R.color.colorWarmGrey))
     }
 
     if (positiveButton != null) {

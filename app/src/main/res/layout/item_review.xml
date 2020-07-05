@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_8dp"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/dimen_8dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/colorWhiteTwo"
+    app:strokeWidth="@dimen/dimen_1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/dimen_12dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMoreReview"
+            style="@style/MovieDbTextButton.Medium.GreyishBrownTwo"
+            android:paddingLeft="@dimen/dimen_8dp"
+            android:paddingRight="@dimen/dimen_8dp"
+            android:text="@string/label_more"
+            android:textSize="@dimen/text_size_10sp"
+            app:icon="@drawable/ic_purple_next"
+            app:iconGravity="end"
+            app:iconPadding="@dimen/dimen_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="@dimen/dimen_16dp"
+            android:layout_height="@dimen/dimen_1dp"
+            android:background="@color/colorTael"
+            app:layout_constraintBottom_toBottomOf="@id/tvAuthor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvAuthor" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthor"
+            style="@style/MovieDbTextView.Medium.Black"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintStart_toEndOf="@id/viewLine"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Black Panther" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContent"
+            style="@style/MovieDbTextView.Black"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="@dimen/text_size_10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnMoreReview"
+            tools:text="Released Date: 13 February 2018" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

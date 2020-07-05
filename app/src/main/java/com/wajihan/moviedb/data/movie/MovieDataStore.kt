@@ -1,8 +1,9 @@
 package com.wajihan.moviedb.data.movie
 
 import com.wajihan.moviedb.data.movie.model.response.GenreItem
-import com.wajihan.moviedb.data.movie.model.response.MovieItem
 import com.wajihan.moviedb.data.movie.model.response.ReviewItem
+import com.wajihan.moviedb.data.movie.model.response.VideoItem
+import com.wajihan.moviedb.data.movie.model.response.movie.MovieItem
 import com.wajihan.moviedb.data.movie.remote.MovieApi
 import com.wajihan.moviedb.utils.base.data.datastore.singleApiError
 import io.reactivex.Single
@@ -32,6 +33,12 @@ class MovieDataStore(api: MovieApi) : MovieRepository {
 
     override fun getMovieReviews(movieId: Int, page: Int): Single<List<ReviewItem>> {
         return webService.getMovieReviews(movieId, page)
+            .lift(singleApiError())
+            .map { it.results }
+    }
+
+    override fun getMovieVideos(movieId: Int): Single<List<VideoItem>> {
+        return webService.getMovieVideos(movieId)
             .lift(singleApiError())
             .map { it.results }
     }

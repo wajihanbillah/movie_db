@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dimen_80dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/dimen_16dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_110dp"
+        app:cardCornerRadius="@dimen/dimen_10dp">
+
+        <ImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/sample_image" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/MovieDbTextView.BrownishGrey"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="@dimen/text_size_8sp"
+        app:autoSizeTextType="none"
+        tools:text="@string/label_overview" />
+</LinearLayout>

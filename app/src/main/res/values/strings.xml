@@ -1,8 +1,41 @@
 <resources>
-    <string name="app_name">MovieDB</string>
-    <string name="title_empty">No Data</string>
-    <string name="message_empty">No Data to be shown</string>
-    <string name="label_error">Error</string>
-    <string name="error_message">Please check your internet connection, and try again.</string>
+    <string name="action_continue">Continue</string>
     <string name="action_retry">Retry</string>
+
+    <string name="app_name">MovieDB</string>
+
+    <string name="error_message">Please check your internet connection, and try again.</string>
+
+    <string name="format_api_date">YYYY-MM-dd</string>
+    <string name="format_detail_date">dd MMMM YYYY</string>
+    <string name="format_discover_movie_date">MMMM dd, YYYY</string>
+    <string name="format_rating">%.1f/</string>
+    <string name="format_released_date">Released Date: %s</string>
+    <string name="format_url">http://%s</string>
+
+    <string name="label_choose_movie_genre">Choose Movie Genre</string>
+    <string name="label_dicover_movies">Discover Movies</string>
+    <string name="label_error">Error</string>
+    <string name="label_minus">-</string>
+    <string name="label_more">More</string>
+    <string name="label_overview">Overview</string>
+    <string name="label_production_company">Production Company</string>
+    <string name="label_production_company_empty">No Production Company Data</string>
+    <string name="label_released_date">Released Date:</string>
+    <string name="label_selected_genre">Selected Genre</string>
+    <string name="label_ten">10</string>
+    <string name="label_trailer">Trailer</string>
+    <string name="label_user_review">User Review</string>
+    <string name="label_user_review_empty">No User Review Data</string>
+    <string name="label_youtube_trailer_empty">No Youtube Trailer Data</string>
+    <string name="label_youtube_url">https://www.youtube.com/watch?v=</string>
+
+    <string name="message_empty">No Data to be shown</string>
+    <string name="message_exit">Are your sure you want to exit?</string>
+    <string name="message_no_url">URL unavailable</string>
+
+    <string name="separator_sub_title">\" | \"</string>
+
+    <string name="title_empty">No Data</string>
+    <string name="title_exit">Exit</string>
 </resources>

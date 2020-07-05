@@ -1,7 +1,8 @@
-package com.wajihan.moviedb.data.movie.model.response
+package com.wajihan.moviedb.data.movie.model.response.movie
 
 import com.google.gson.annotations.SerializedName
-import com.wajihan.moviedb.domain.movie.model.Movie
+import com.wajihan.moviedb.data.movie.model.response.GenreItem
+import com.wajihan.moviedb.domain.movie.model.movie.Movie
 import com.wajihan.moviedb.utils.orFalse
 import com.wajihan.moviedb.utils.orZero
 
@@ -29,7 +30,7 @@ data class MovieItem(
     @SerializedName("title")
     val title: String?,
     @SerializedName("vote_average")
-    val voteAverage: Int?,
+    val voteAverage: Double?,
     @SerializedName("overview")
     val overview: String?,
     @SerializedName("release_date")
@@ -45,15 +46,15 @@ data class MovieItem(
     @SerializedName("imdb_id")
     val imdbId: String?,
     @SerializedName("production_companies")
-    val productionCompanies: List<String>?,
+    val productionCompanies: List<ProductionCompanyItem>?,
     @SerializedName("production_countries")
-    val productionCountries: List<String>?,
+    val productionCountries: List<ProductionCountryItem>?,
     @SerializedName("revenue")
     val revenue: Int?,
     @SerializedName("runtime")
     val runtime: Int?,
     @SerializedName("spoken_languages")
-    val spokenLanguages: List<String>?,
+    val spokenLanguages: List<SpokenLanguageItem>?,
     @SerializedName("status")
     val status: String?,
     @SerializedName("tagline")
@@ -80,11 +81,11 @@ data class MovieItem(
             genres?.map { it.toGenre() }.orEmpty(),
             homepage.orEmpty(),
             imdbId.orEmpty(),
-            productionCompanies.orEmpty(),
-            productionCountries.orEmpty(),
+            productionCompanies?.map { it.toProductionCompany() }.orEmpty(),
+            productionCountries?.map { it.toProductionCountry() }.orEmpty(),
             revenue.orZero(),
             runtime.orZero(),
-            spokenLanguages.orEmpty(),
+            spokenLanguages?.map { it.toSpokenLanguage() }.orEmpty(),
             status.orEmpty(),
             tagline.orEmpty()
         )

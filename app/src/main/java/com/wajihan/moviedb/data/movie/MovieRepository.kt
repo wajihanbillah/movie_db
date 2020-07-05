@@ -1,8 +1,9 @@
 package com.wajihan.moviedb.data.movie
 
 import com.wajihan.moviedb.data.movie.model.response.GenreItem
-import com.wajihan.moviedb.data.movie.model.response.MovieItem
 import com.wajihan.moviedb.data.movie.model.response.ReviewItem
+import com.wajihan.moviedb.data.movie.model.response.VideoItem
+import com.wajihan.moviedb.data.movie.model.response.movie.MovieItem
 import com.wajihan.moviedb.utils.base.data.BaseRepository
 import io.reactivex.Single
 
@@ -15,4 +16,6 @@ interface MovieRepository : BaseRepository {
     fun getMovieDetail(movieId: Int): Single<MovieItem>
 
     fun getMovieReviews(movieId: Int, page: Int): Single<List<ReviewItem>>
+
+    fun getMovieVideos(movieId: Int): Single<List<VideoItem>>
 }

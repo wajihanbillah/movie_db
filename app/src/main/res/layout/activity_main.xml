@@ -1,31 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.MainActivity">
+    android:background="@color/colorLightBlueGrey"
+    tools:context=".presentation.main.MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <include layout="@layout/layout_toolbar" />
+
+    <TextView
+        android:id="@+id/tvLabelSelectedGenre"
+        style="@style/MovieDbTextView.Bold.Black"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="@dimen/dimen_16dp"
+        android:text="@string/label_selected_genre" />
+
+    <TextView
+        android:id="@+id/tvSelectedGenre"
+        style="@style/MovieDbTextView.Black"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_alignTop="@id/tvLabelSelectedGenre"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_toEndOf="@id/tvLabelSelectedGenre"
+        android:text="@string/label_minus"
+        android:textStyle="italic" />
+
+    <com.kennyc.view.MultiStateView
+        android:id="@+id/msvGenre"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/llActionBottom"
+        android:layout_below="@id/tvSelectedGenre"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        app:msv_emptyView="@layout/default_empty_layout"
+        app:msv_errorView="@layout/default_error_layout"
+        app:msv_loadingView="@layout/default_loading_layout"
+        app:msv_viewState="content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGenre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="ifContentScrolls"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:paddingEnd="@dimen/dimen_16dp" />
+    </com.kennyc.view.MultiStateView>
+
+    <LinearLayout
+        android:id="@+id/llActionBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="@dimen/dimen_2dp"
+            android:background="@color/colorWarmGrey" />
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            style="@style/MovieDbButton"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:text="@string/action_continue" />
+    </LinearLayout>
+</RelativeLayout>

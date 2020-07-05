@@ -1,8 +1,9 @@
 package com.wajihan.moviedb.data.movie.remote
 
 import com.wajihan.moviedb.data.movie.model.response.GenreItem
-import com.wajihan.moviedb.data.movie.model.response.MovieItem
 import com.wajihan.moviedb.data.movie.model.response.ReviewItem
+import com.wajihan.moviedb.data.movie.model.response.VideoItem
+import com.wajihan.moviedb.data.movie.model.response.movie.MovieItem
 import com.wajihan.moviedb.utils.base.data.ApiResponse
 import io.reactivex.Single
 import retrofit2.Response
@@ -22,4 +23,7 @@ interface MovieApiClient {
 
     @GET("movie/{movie_id}/reviews")
     fun getMovieReviews(@Path("movie_id") movieId: Int, @Query("page") page: Int): Single<Response<ApiResponse<List<ReviewItem>>>>
+
+    @GET("movie/{movie_id}/videos")
+    fun getMovieVideos(@Path("movie_id") movieId: Int): Single<Response<ApiResponse<List<VideoItem>>>>
 }
