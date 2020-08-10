@@ -12,6 +12,7 @@ import com.wajihan.moviedb.R
 import com.wajihan.moviedb.R.string
 import com.wajihan.moviedb.domain.movie.model.Genre
 import com.wajihan.moviedb.presentation.adapter.EndlessMovieAdapter
+import com.wajihan.moviedb.presentation.movie.detail.MovieDetailActivity
 import com.wajihan.moviedb.utils.base.viewmodel.BaseResult.Empty
 import com.wajihan.moviedb.utils.base.viewmodel.BaseResult.Failure
 import com.wajihan.moviedb.utils.base.viewmodel.BaseResult.Loading

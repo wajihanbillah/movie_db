@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.movie.MovieDetailActivity"
+            android:name=".presentation.movie.detail.MovieDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
         <activity

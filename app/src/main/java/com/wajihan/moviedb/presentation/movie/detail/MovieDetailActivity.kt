@@ -1,4 +1,4 @@
-package com.wajihan.moviedb.presentation.movie
+package com.wajihan.moviedb.presentation.movie.detail
 
 import android.content.Context
 import android.content.Intent
@@ -16,6 +16,7 @@ import com.wajihan.moviedb.R.string
 import com.wajihan.moviedb.domain.movie.model.movie.Movie
 import com.wajihan.moviedb.presentation.adapter.EndlessReviewAdapter
 import com.wajihan.moviedb.presentation.adapter.ProductionCompanyAdapter
+import com.wajihan.moviedb.presentation.movie.MovieViewModel
 import com.wajihan.moviedb.utils.base.viewmodel.BaseResult.Empty
 import com.wajihan.moviedb.utils.base.viewmodel.BaseResult.Failure
 import com.wajihan.moviedb.utils.base.viewmodel.BaseResult.Loading
@@ -36,6 +37,7 @@ import com.wajihan.moviedb.utils.showErrorState
 import com.wajihan.moviedb.utils.showLoadingState
 import com.wajihan.moviedb.utils.toImageUrl
 import kotlinx.android.synthetic.main.activity_movie_detail.appBarMovieDetail
+import kotlinx.android.synthetic.main.activity_movie_detail.btnPlayYoutubeTrailer
 import kotlinx.android.synthetic.main.activity_movie_detail.cardYoutubeTrailer
 import kotlinx.android.synthetic.main.activity_movie_detail.imgBackdrop
 import kotlinx.android.synthetic.main.activity_movie_detail.imgPoster
@@ -212,6 +214,10 @@ class MovieDetailActivity : AppCompatActivity(), OnLoadMoreListener {
                         cardYoutubeTrailer.onClick {
                             openWebPage(this, getString(string.label_youtube_url) + videoData.key)
                         }
+
+                        btnPlayYoutubeTrailer.onClick {
+                            openWebPage(this, getString(string.label_youtube_url) + videoData.key)
+                        }
                     } else msvYoutubeTrailer.showEmptyState(
                         errorMessage = getString(string.label_youtube_trailer_empty),
                         title = emptyString(),
@@ -257,14 +263,13 @@ class MovieDetailActivity : AppCompatActivity(), OnLoadMoreListener {
 
             val releasedDate = releaseDate.convertDateFormat(getString(string.format_api_date), getString(string.format_detail_date))
             val genres = genres.joinToString { it.name }
-            val languages = spokenLanguages.joinToString { it.name }
+            val languages = spokenLanguages.filter { it.name.isNotEmpty() }.joinToString { it.name }
             tvSubTitle.text = listOf(releasedDate, genres, languages).joinToString(getString(string.separator_sub_title))
 
             tvMovieRating.text = String.format(getString(string.format_rating), voteAverage)
 
             imgPoster.loadImageUrl(this@MovieDetailActivity, posterPath.toImageUrl())
             tvOverview.text = overview
-
         }
     }
 

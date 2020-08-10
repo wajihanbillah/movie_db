@@ -34,7 +34,7 @@
     <string name="message_exit">Are your sure you want to exit?</string>
     <string name="message_no_url">URL unavailable</string>
 
-    <string name="separator_sub_title">\" | \"</string>
+    <string name="separator_sub_title">&#160;|&#160;</string>
 
     <string name="title_empty">No Data</string>
     <string name="title_exit">Exit</string>
